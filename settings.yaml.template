@@ -1,0 +1,6 @@
+api_key: '<YOUR_YOUTUBE_V3_API_KEY>' # youtube v3 API key
+database: 'sqlite:///db.sqlite3' # database URL
+channels: # one or more
+    - '<CHANNEL_0>'
+    - '<CHANNEL_1>'
+    - '<CHANNEL_2>'
