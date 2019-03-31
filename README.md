@@ -17,6 +17,7 @@ This repo contains _settings.yaml.template_ which must be filled up with proper 
 
 ### Init database
 `$ python database py`
+
 **CAUTION**: it drops and recreates brand new database
 
 ### Run script
