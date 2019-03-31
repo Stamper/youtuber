@@ -43,9 +43,6 @@ class Grabber:
                 while True:
                     pl_items, page_token = self._get('playlistItems', part='snippet,contentDetails', playlistId=pl_id, maxResults=50, pageToken=page_token)
 
-                    if not page_token:
-                        break
-
                     for item in pl_items:
                         video_id = item['contentDetails']['videoId']
                         video_published_at = item['contentDetails'].get('videoPublishedAt', None)
@@ -66,4 +63,7 @@ class Grabber:
                         views = Views(video_id, count)
                         self.session.add(views)
                         self.session.commit()
+
+                    if not page_token:
+                        break
 
