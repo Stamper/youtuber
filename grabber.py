@@ -57,7 +57,13 @@ class Grabber:
                             self.session.add(Video(video_id=video_id, channel=name, title=title, published_at=published_at))
                             self.session.commit()
 
-                        video_stat = self._get('videos', part='statistics', id=video_id)[0][0]
+                        stats, _ = self._get('videos', part='statistics', id=video_id)
+                        try:
+                            video_stat = stats[0]
+
+                        except IndexError:
+                            continue
+
                         count = int(video_stat['statistics']['viewCount'])
 
                         views = Views(video_id, count)
