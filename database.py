@@ -17,8 +17,8 @@ class Video(Base):
     __tablename__ = 'videos'
 
     video_id = Column(String(11), primary_key=True, index=True)
-    channel = Column(String)
-    title = Column(String)
+    channel = Column(String(50))
+    title = Column(String(200))
     published_at = Column(Date)
 
 
