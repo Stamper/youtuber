@@ -9,7 +9,7 @@ SETTINGS = 'settings.yaml'
 with open(SETTINGS, 'r') as stream:
     config = load(stream, Loader=BaseLoader)
 
-engine = create_engine(config['database'])
+engine = create_engine(config['database'], encoding='utf-8')
 Base = declarative_base()
 
 
