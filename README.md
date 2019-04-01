@@ -16,7 +16,7 @@ Any [SqlAlchemy compilant database](https://docs.sqlalchemy.org/en/latest/dialec
 This repo contains _settings.yaml.template_ which must be filled up with proper values and renamed to _settings.yaml_
 
 ### Init database
-`$ python database py`
+`$ python database.py`
 
 **CAUTION**: it drops and recreates brand new database
 
