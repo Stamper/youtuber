@@ -65,8 +65,10 @@ class Grabber:
                             continue
 
                         count = int(video_stat['statistics']['viewCount'])
+                        likes = int(video_stat['statistics']['likeCount'])
+                        dislikes = int(video_stat['statistics']['dislikeCount'])
 
-                        views = Views(video_id, count)
+                        views = Views(video_id, count, likes, dislikes)
                         self.session.add(views)
                         self.session.commit()
 

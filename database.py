@@ -29,10 +29,14 @@ class Views(Base):
     video_id = Column(String(11), ForeignKey('videos.video_id'), index=True)
     timestamp = Column(DateTime, index=True)
     count = Column(BigInteger)
+    likes = Column(BigInteger)
+    dislikes = Column(BigInteger)
 
-    def __init__(self, video_id, count):
+    def __init__(self, video_id, count, likes, dislikes):
         self.video_id = video_id
         self.count = count
+        self.likes = likes
+        self.dislikes = dislikes
         self.timestamp = datetime.now()
 
 
